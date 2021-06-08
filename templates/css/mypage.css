@@ -1,3 +1,22 @@
+body{
+    width: 375px;
+    height: 812px;
+    margin: 0 auto;
+}
+h1{
+    background-color: red;
+    text-align: center;
+}
+#logo{
+    width: 200px;
+}
 img{
+    width: 50px;
+}
+.button{
+    text-align: center;
+}
+button{
     width: 150px;
+    border: none;
 }
