@@ -1,9 +1,9 @@
 <?php
     //swiftのログインボタンが押された時
-    if(isset($_GET['login'])){
+    if(isset($_POST['login'])){
         //swiftから送られてきた値
-        $userId = $_GET['userId'];
-        $password = $_GET['password'];
+        $userId = $_POST['userId'];
+        $password = $_POST['password'];
 
         //空白チェック
         if($userId != null && $password != null){   //入力されている場合
