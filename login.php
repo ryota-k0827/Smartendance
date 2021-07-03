@@ -1,9 +1,9 @@
 <?php
     //swiftのログインボタンが押された時
-    if(isset($_POST['login'])){
+    //if(isset($_POST['login'])){
         //swiftから送られてきた値
-        $userId = $_POST['userId'];
-        $password = $_POST['password'];
+        $userId = $_GET['userId'];
+        $password = $_GET['password'];
 
         //空白チェック
         if($userId != null && $password != null){   //入力されている場合
@@ -35,16 +35,19 @@
                     $user_data = array(
                         'userId'=>$userId,
                         'name'=>$record['name'],
-                        'type'=>'instructor'
+                        'type'=>'instructor',
+                        'classId'=>'null'
                     );
                 }
                 echo json_encode($user_data, JSON_UNESCAPED_UNICODE);
             }else{  //一致しなかった場合
+                echo "エラー";
                 return;
             }
         }else{  //入力されていない場合
+            echo "入力されていない";
             return;
         }
-    }
+    //}
 
-    require_once './tpl/login.php';
+    //require_once './tpl/login.php';
