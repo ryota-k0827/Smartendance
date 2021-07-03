@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>ログイン画面</h1>
-    <form action="" method="get">
+    <form action="" method="post">
         <p>ユーザID</p>
         <p><input type="text" name="userId" value=""></p>
         <p>パスワード</p>
