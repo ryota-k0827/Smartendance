@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: localhost
--- 生成日時: 2021 年 7 月 02 日 15:18
+-- 生成日時: 2021 年 7 月 06 日 17:02
 -- サーバのバージョン： 10.4.19-MariaDB
 -- PHP のバージョン: 8.0.6
 
@@ -185,6 +185,7 @@ INSERT INTO `in_charge` (`instructor_id`, `class_id`) VALUES
 CREATE TABLE `students` (
   `student_number` int(5) NOT NULL COMMENT '学籍番号',
   `classes_id` int(3) NOT NULL COMMENT '所属クラス',
+  `attendance_number` int(2) UNSIGNED ZEROFILL NOT NULL COMMENT '出席番号',
   `name` varchar(20) NOT NULL COMMENT '名前',
   `password` varchar(10) NOT NULL COMMENT 'パスワード'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='学生';
@@ -193,9 +194,10 @@ CREATE TABLE `students` (
 -- テーブルのデータのダンプ `students`
 --
 
-INSERT INTO `students` (`student_number`, `classes_id`, `name`, `password`) VALUES
-(90000, 1, '金丸航大', '0921'),
-(90001, 1, '金子凌大', '9999');
+INSERT INTO `students` (`student_number`, `classes_id`, `attendance_number`, `name`, `password`) VALUES
+(90000, 1, 10, '金丸航大', '0921'),
+(90001, 1, 09, '金子凌大', '9999'),
+(90002, 1, 11, 'HAL太郎', '1234');
 
 -- --------------------------------------------------------
 
