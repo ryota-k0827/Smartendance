@@ -4,10 +4,8 @@
     $classes_id = $_GET['class_id'];
 
     $day_of_the_week = date('w');  //本日の曜日の番号（0〜6）のいずれかを格納
-    $day_of_the_week = 1; //本日の曜日の番号（0〜6）のいずれかを格納
     $date = date('Y/m/d');
     $time = date('H:i:s');  //現在の時間を取得
-    $time = '11:15:00';
     
     //sql
     $link = mysqli_connect('localhost','root','','smartendance');
