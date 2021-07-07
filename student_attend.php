@@ -53,7 +53,8 @@
                     'classSymbol'=>$record['class_symbol'],
                     'subject'=>$record['subject'],
                     'attendTime'=>$nowDate,
-                    'UUID'=>$record['UUID']
+                    'resultMsg'=>"出席完了",
+                    'status'=>null
                 );
                 // 配列をjson_encode関数でJSON形式に変換します。
                 echo json_encode($ary_data, JSON_UNESCAPED_UNICODE);
@@ -68,7 +69,8 @@
                         'classSymbol'=>$record['class_symbol'],
                         'subject'=>$record['subject'],
                         'attendTime'=>$nowDate,
-                        'UUID'=>$record['UUID']
+                        'resultMsg'=>"出席完了",
+                        'status'=>"遅刻"
                     );
                 }else{  //15分よりも後に出席した場合
                     $nowDate = date("Y/m/d H:i");
@@ -76,28 +78,14 @@
                         'classRoomNuber'=>$class_room_number,
                         'classSymbol'=>$record['class_symbol'],
                         'subject'=>$record['subject'],
-                        'attendTime'=>$nowDate,
-                        'UUID'=>$record['UUID']
+                        'resultMsg'=>"出席完了",
+                        'status'=>"欠席"
                     );
                 }
                 // 配列をjson_encode関数でJSON形式に変換します。
                 echo json_encode($attend_data, JSON_UNESCAPED_UNICODE);
             }
-        }else{
-            //echo 'この授業の出席はすでにされています。';
-            $resultMsg = array(
-                'resultMsg'=>'この授業の出席はすでにされています。'
-            );
-            echo json_encode($resultMsg, JSON_UNESCAPED_UNICODE);
         }
-    }else{  //ない場合
-        //echo '現在、この教室で開講している授業はありません。';
-        $resultMsg = array(
-            'resultMsg'=>'現在、この教室で開講している授業はありません。'
-        );
-        echo json_encode($resultMsg, JSON_UNESCAPED_UNICODE);
     }
     mysqli_close($link);
-    
-    // require_once './tpl/student_attend.php';
 ?>
