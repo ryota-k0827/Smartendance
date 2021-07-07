@@ -78,6 +78,7 @@
                         'classRoomNuber'=>$class_room_number,
                         'classSymbol'=>$record['class_symbol'],
                         'subject'=>$record['subject'],
+                        'attendTime'=>$nowDate,
                         'resultMsg'=>"出席完了",
                         'status'=>"欠席"
                     );
