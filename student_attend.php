@@ -50,8 +50,8 @@
                     'classSymbol'=>$record['class_symbol'],
                     'subject'=>$record['subject'],
                     'attendTime'=>$nowDate,
-                    'resultMsg'=>"出席完了",
-                    'status'=>null
+                    'resultMsg'=>"",
+                    'status'=>"入室完了"
                 );
                 // 配列をjson_encode関数でJSON形式に変換します。
                 echo json_encode($ary_data, JSON_UNESCAPED_UNICODE);
@@ -65,8 +65,8 @@
                         'classSymbol'=>$record['class_symbol'],
                         'subject'=>$record['subject'],
                         'attendTime'=>$nowDate,
-                        'resultMsg'=>"出席完了",
-                        'status'=>"遅刻"
+                        'resultMsg'=>"遅刻です。",
+                        'status'=>"入室完了"
                     );
                 }else{  //15分よりも後に出席した場合
                     $nowDate = date("Y/m/d H:i:s");
@@ -76,8 +76,8 @@
                         'classSymbol'=>$record['class_symbol'],
                         'subject'=>$record['subject'],
                         'attendTime'=>$nowDate,
-                        'resultMsg'=>'授業開始後15分が経過した為、欠席扱いです。',
-                        'status'=>"欠席"
+                        'resultMsg'=>'授業開始後15分が経過した為、欠席です。',
+                        'status'=>"入室完了"
                     );
                 }
                 // 配列をjson_encode関数でJSON形式に変換します。
