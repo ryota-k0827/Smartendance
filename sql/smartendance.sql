@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: localhost
--- 生成日時: 2021 年 7 月 06 日 17:02
+-- 生成日時: 2021 年 7 月 08 日 17:51
 -- サーバのバージョン： 10.4.19-MariaDB
 -- PHP のバージョン: 8.0.6
 
@@ -31,17 +31,18 @@ CREATE TABLE `attend` (
   `no` int(11) NOT NULL COMMENT '科目No',
   `student_number` int(5) NOT NULL COMMENT '学籍番号',
   `attend_day` date NOT NULL COMMENT '出席日付',
-  `attend_time` time NOT NULL COMMENT '出席時間'
+  `attend_time` time NOT NULL COMMENT '出席時間',
+  `status` int(1) NOT NULL COMMENT '1→出席,2→出席(遅刻),3→欠席'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- テーブルのデータのダンプ `attend`
 --
 
-INSERT INTO `attend` (`no`, `student_number`, `attend_day`, `attend_time`) VALUES
-(6, 90000, '2021-06-26', '14:40:00'),
-(7, 90000, '2021-06-26', '16:20:01'),
-(15, 90000, '2021-06-25', '14:40:00');
+INSERT INTO `attend` (`no`, `student_number`, `attend_day`, `attend_time`, `status`) VALUES
+(6, 90000, '2021-06-26', '14:40:00', 1),
+(7, 90000, '2021-06-26', '16:20:01', 1),
+(15, 90000, '2021-06-25', '14:40:00', 1);
 
 -- --------------------------------------------------------
 
