@@ -65,7 +65,7 @@
                         'classSymbol'=>$record['class_symbol'],
                         'subject'=>$record['subject'],
                         'attendTime'=>$nowDate,
-                        'resultMsg'=>"遅刻です。",
+                        'resultMsg'=>"（遅刻）",
                         'status'=>"入室完了"
                     );
                 }else{  //15分よりも後に出席した場合
@@ -76,7 +76,7 @@
                         'classSymbol'=>$record['class_symbol'],
                         'subject'=>$record['subject'],
                         'attendTime'=>$nowDate,
-                        'resultMsg'=>'授業開始後15分が経過した為、欠席です。',
+                        'resultMsg'=>'（授業開始後15分が経過した為、欠席です。）',
                         'status'=>"入室完了"
                     );
                 }
