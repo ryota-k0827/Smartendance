@@ -75,7 +75,7 @@
                         'classSymbol'=>$record['class_symbol'],
                         'subject'=>$record['subject'],
                         'attendTime'=>$nowDate,
-                        'resultMsg'=>"出席完了",
+                        'resultMsg'=>'授業開始後15分が経過した為、欠席扱いです。',
                         'status'=>"欠席"
                     );
                 }
