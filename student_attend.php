@@ -20,8 +20,6 @@
                                 ON teaches.time_id = class_times.times 
                                 INNER JOIN classes
                                 ON teaches.classes_id = classes.id
-                                INNER JOIN attend
-                                ON teaches.no = attend.no
                                 WHERE day_of_the_week = ".$day_of_the_week." 
                                 AND class_rooms.class_room = '".$class_room_number."' 
                                 AND classes_id = ".$classes_id." 
