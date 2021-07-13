@@ -1,7 +1,7 @@
 <?php
     //swiftから送られてきた値
-    $userId = $_POST['userId'];
-    $password = $_POST['password'];
+    $userId = $_GET['userId'];
+    $password = $_GET['password'];
 
     //空白チェック
     if($userId != null && $password != null){   //入力されている場合
