@@ -10,7 +10,7 @@
     //sql
     $link = mysqli_connect('localhost','root','','smartendance');
     mysqli_set_charset($link,'utf8');
-    $data = mysqli_query($link,"SELECT no,classes.class_symbol,time_id,class_times.start_time,class_times.end_time,subjects.subject,class_rooms.class_room,class_rooms.UUID 
+    $data = mysqli_query($link,"SELECT no,classes.class_symbol,time_id,class_times.start_time,class_times.end_time,subjects.subject,class_rooms.class_room
                                 FROM teaches 
                                 INNER JOIN class_rooms 
                                 ON teaches.class_room_id = class_rooms.id 
@@ -24,11 +24,12 @@
                                 ON teaches.no = attend.no
                                 WHERE day_of_the_week = ".$day_of_the_week." 
                                 AND class_rooms.class_room = '".$class_room_number."' 
-                                AND classes_id = ".$classes_id." 
                                 AND '".$time."' <= class_times.end_time 
                                 LIMIT 1");
 
     $record = mysqli_fetch_assoc($data);    //sqlから取り出した値を$recordに格納
+
+    var_dump($record);
 
     //現在時間で開講している授業があるか
     if($record != null){    //ある場合
