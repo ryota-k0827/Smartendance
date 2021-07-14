@@ -61,7 +61,6 @@
             $record2[] = $row;
         }
 
-        var_dump($record2);
         $ary_data = array(
             'classRoomNumber' => $class_room_number,    //教室番号
             'classSymbol' => $record[0]['class_symbol'],    //クラス記号
