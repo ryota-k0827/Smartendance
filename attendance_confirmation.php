@@ -5,7 +5,8 @@
 
     $day_of_the_week = date('w');  //本日の曜日の番号（0〜6）のいずれかを格納
     $date = date('Y-m-d');  //本日の日付を取得
-    $time = date('H:i:s');  //現在の時間を取得
+    //$time = date('H:i:s');  //現在の時間を取得
+    $time = '11:15:00';  //現在の時間を取得
 
     //担当教官、クラス記号、科目名、曜日、開始時間、終了時間、クラス記号のidを取得するsql
     $link = mysqli_connect('localhost','root','','smartendance');
