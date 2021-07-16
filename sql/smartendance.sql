@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- ホスト: localhost
--- 生成日時: 2021 年 7 月 09 日 00:18
+-- 生成日時: 2021 年 7 月 16 日 12:33
 -- サーバのバージョン： 10.4.19-MariaDB
--- PHP のバージョン: 8.0.7
+-- PHP のバージョン: 8.0.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,6 +42,7 @@ CREATE TABLE `attend` (
 INSERT INTO `attend` (`no`, `student_number`, `attend_day`, `attend_time`, `status`) VALUES
 (6, 90000, '2021-06-26', '14:40:00', 1),
 (7, 90000, '2021-06-26', '16:20:01', 1),
+(8, 90000, '2021-07-14', '11:15:00', 1),
 (15, 90000, '2021-06-25', '14:40:00', 1);
 
 -- --------------------------------------------------------
@@ -259,7 +260,7 @@ INSERT INTO `teaches` (`no`, `day_of_the_week`, `time_id`, `classes_id`, `subjec
 (10, 4, 4, 1, 6, 97, 2),
 (11, 4, 5, 1, 7, 15, 4),
 (12, 4, 6, 1, 7, 15, 4),
-(13, 5, 2, 1, 1, 96, 1),
+(13, 5, 2, 1, 8, 96, 1),
 (14, 5, 3, 1, 8, 96, 1),
 (15, 5, 4, 1, 9, 98, 3);
 
