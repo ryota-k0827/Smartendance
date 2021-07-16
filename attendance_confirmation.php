@@ -63,8 +63,6 @@
         $number_of_attendees = $record2[0]["COUNT(*)"] - $cnt;
         $number_of_attendees = (String)$number_of_attendees;
 
-        var_dump($number_of_attendees);
-
         $ary_data = array(
             'classRoomNumber' => $class_room_number,    //教室番号
             'classSymbol' => $record[0]['class_symbol'],    //クラス記号
