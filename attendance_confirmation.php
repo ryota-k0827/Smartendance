@@ -7,9 +7,6 @@
     $date = date('Y-m-d');  //本日の日付を取得
     $time = date('H:i:s');  //現在の時間を取得
 
-
-    echo $day_of_the_week;
-    echo $time;
     //担当教官、クラス記号、科目名、曜日、開始時間、終了時間、クラス記号のidを取得するsql
     $link = mysqli_connect('localhost','root','','smartendance');
     mysqli_set_charset($link,'utf8');
@@ -39,7 +36,6 @@
         $cnt++;
     }
 
-    var_dump($record);
     if($record != null){
         //欠席している生徒の出席番号と名前を取り出すsql
         $data1 = mysqli_query($link,"SELECT * FROM students WHERE NOT EXISTS (SELECT * FROM attend WHERE students.student_number = attend.student_number AND attend_day = '".$date."')");
