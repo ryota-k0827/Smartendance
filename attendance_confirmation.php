@@ -1,7 +1,7 @@
 <?php
     //swiftから送られてきた値
     $class_room_number = $_GET['class_room'];   //教室番号
-    $userId = $_GET['user_id']; //ユーザID（ローマ字）
+    //$userId = $_GET['user_id']; //ユーザID（ローマ字）
 
     $day_of_the_week = date('w');  //本日の曜日の番号（0〜6）のいずれかを格納
     $date = date('Y-m-d');  //本日の日付を取得
