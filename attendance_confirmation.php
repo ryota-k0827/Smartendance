@@ -30,18 +30,18 @@
                                 AND class_rooms.class_room = '".$class_room_number."'");
 
     $record = [];
-    $cnt = 0;
     while($row = mysqli_fetch_assoc($data)){
         $record[] = $row;
-        $cnt++;
     }
 
     if($record != null){
         //欠席している生徒の出席番号と名前を取り出すsql
         $data1 = mysqli_query($link,"SELECT * FROM students WHERE NOT EXISTS (SELECT * FROM attend WHERE students.student_number = attend.student_number AND attend_day = '".$date."')");
         $record1 = [];
+        $cnt = 0;
         while($row = mysqli_fetch_assoc($data1)){
             $record1[] = $row;
+            $cnt++;
         }
         $absenteeNumber = [];
         $absenteeName = [];
@@ -59,11 +59,14 @@
             $record2[] = $row;
         }
 
+        //出席者の人数
+        $number_of_attendees = $record2[0]["COUNT(*)"] - $cnt;
+
         $ary_data = array(
             'classRoomNumber' => $class_room_number,    //教室番号
             'classSymbol' => $record[0]['class_symbol'],    //クラス記号
             'subject' => $record[0]['subject'], //科目名
-            'number_of_attendees' => $cnt,  //出席者の人数
+            'number_of_attendees' => $number_of_attendees,  //出席者の人数
             'class_size' =>  $record2[0]["COUNT(*)"],   //クラスの人数
             'absenteeNumber' => $absenteeNumber,    //欠席者の出席（２次元配列）
             'absenteeName' => $absenteeName //欠席者の名前（２次元配列）
