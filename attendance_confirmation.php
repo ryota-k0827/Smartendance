@@ -9,7 +9,9 @@
     //$time = '11:15:00';  //現在の時間を取得
 
     //担当教官、クラス記号、科目名、曜日、開始時間、終了時間、クラス記号のidを取得するsql
-    $link = mysqli_connect('localhost','root','','smartendance');
+    //$link = mysqli_connect('localhost','root','','smartendance');
+    //Docker仕様↓
+    $link = mysqli_connect('mysql','root','','smartendance');
     mysqli_set_charset($link,'utf8');
     $data = mysqli_query($link,"SELECT roma_name,class_symbol,subject,teaches.day_of_the_week,start_time,end_time,classes_id,class_rooms.class_room
                                 FROM teaches 

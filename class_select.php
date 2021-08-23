@@ -8,7 +8,9 @@
     $time = date('H:i:s');  //現在の時間を取得
     
     //sql
-    $link = mysqli_connect('localhost','root','','smartendance');
+    //$link = mysqli_connect('localhost','root','','smartendance');
+    //Docker仕様↓
+    $link = mysqli_connect('mysql','root','','smartendance');
     mysqli_set_charset($link,'utf8');
     $data = mysqli_query($link,"SELECT no,classes.class_symbol,time_id,class_times.start_time,class_times.end_time,subjects.subject,class_rooms.class_room,class_rooms.UUID 
                                 FROM teaches 
