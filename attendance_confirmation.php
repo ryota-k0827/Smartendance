@@ -4,14 +4,15 @@
     //$userId = $_GET['user_id']; //ユーザID（ローマ字）
 
     $day_of_the_week = date('w');  //本日の曜日の番号（0〜6）のいずれかを格納
+    $day_of_the_week = 1;
     $date = date('Y-m-d');  //本日の日付を取得
     $time = date('H:i:s');  //現在の時間を取得
-    //$time = '11:15:00';  //現在の時間を取得
+    $time = '11:15:00';  //現在の時間を取得
 
     //担当教官、クラス記号、科目名、曜日、開始時間、終了時間、クラス記号のidを取得するsql
-    //$link = mysqli_connect('localhost','root','','smartendance');
+    $link = mysqli_connect('localhost','root','','smartendance');
     //Docker仕様↓
-    $link = mysqli_connect('mysql','root','','smartendance');
+    //$link = mysqli_connect('mysql','root','','smartendance');
     mysqli_set_charset($link,'utf8');
     $data = mysqli_query($link,"SELECT roma_name,class_symbol,subject,teaches.day_of_the_week,start_time,end_time,classes_id,class_rooms.class_room
                                 FROM teaches 
@@ -39,7 +40,7 @@
 
     if($record != null){
         //欠席している生徒の出席番号と名前を取り出すsql
-        $data1 = mysqli_query($link,"SELECT * FROM students WHERE NOT EXISTS (SELECT * FROM attend WHERE students.student_number = attend.student_number AND attend_day = '".$date."')");
+        $data1 = mysqli_query($link,"SELECT * FROM students WHERE NOT EXISTS (SELECT * FROM attend WHERE students.student_number = attend.student_number AND attend_day = '".$date."') ORDER BY attendance_number ASC");
         $record1 = [];
         $cnt = 0;
         while($row = mysqli_fetch_assoc($data1)){
