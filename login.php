@@ -12,9 +12,7 @@
             $sql = "SELECT * FROM instructors WHERE roma_name = '".$userId."' AND password = '".$password."'";
         }
         //sql
-        //$link = mysqli_connect('localhost','root','','smartendance');
-        //Docker仕様↓
-        $link = mysqli_connect('mysql','root','','smartendance');
+        $link = mysqli_connect('mysql1.php.xdomain.ne.jp','ryotakaneko_1','ohs80538','ryotakaneko_smartendance');
         mysqli_set_charset($link,'utf8');
         $data = mysqli_query($link,$sql);
         mysqli_close($link);

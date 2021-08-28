@@ -4,14 +4,13 @@
     $classes_id = $_GET['class_id'];
 
     $day_of_the_week = date('w');  //本日の曜日の番号（0〜6）のいずれかを格納
+    //$day_of_the_week = 1; //テスト用
     $date = date('Y/m/d');
     $time = date('H:i:s');  //現在の時間を取得
-    //$time = '11:15:00';  //現在の時間を取得
+    //$time = '11:15:00';  //テスト用
 
     //sql
-    //$link = mysqli_connect('localhost','root','','smartendance');
-    //Docker仕様↓
-    $link = mysqli_connect('mysql','root','','smartendance');
+    $link = mysqli_connect('mysql1.php.xdomain.ne.jp','ryotakaneko_1','ohs80538','ryotakaneko_smartendance');
     mysqli_set_charset($link,'utf8');
     $data = mysqli_query($link,"SELECT no,classes.class_symbol,time_id,class_times.start_time,class_times.end_time,subjects.subject,class_rooms.class_room,class_rooms.UUID 
                                 FROM teaches 
