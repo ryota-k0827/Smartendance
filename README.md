@@ -13,7 +13,7 @@
 
 ## 動作環境
 - iOS14を搭載したiPhone7, iPhone8, iPhene SE(2020), iPhone 12 mini（実機2台、もしくはエミュレーター1台と実機1台必要）
-- macOS（アプリをビルドする為に必須）
+- macOS 11以上を搭載したMac（アプリをビルドする際に使用）
 - [Xcode 12](https://apps.apple.com/jp/app/xcode/id497799835?mt=12)
 
 ## 操作手順
