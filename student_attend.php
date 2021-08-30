@@ -6,7 +6,6 @@
     $day_of_the_week = date('w');  //本日の曜日の番号（0〜6）のいずれかを格納
     $date = date('Y/m/d');
     $time = date('H:i:s');  //現在の時間を取得
-    //$time = '11:15:00';  //現在の時間を取得
 
     //sql
     $link = mysqli_connect('mysql1.php.xdomain.ne.jp','ryotakaneko_1','ohs80538','ryotakaneko_smartendance');
