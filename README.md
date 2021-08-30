@@ -14,6 +14,7 @@
 ## 動作環境
 - iOS14を搭載したiPhone7, iPhone8, iPhene SE(2020), iPhone 12 mini（実機2台、もしくはエミュレーター1台と実機1台必要）
 - macOS（アプリをビルドする為に必須）
+- [Xcode 12](https://apps.apple.com/jp/app/xcode/id497799835?mt=12)
 
 ## 操作手順
 1. BLEビーコンが必要です。
