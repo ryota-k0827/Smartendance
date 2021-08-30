@@ -43,7 +43,6 @@
                 'resultMsg'=>'ユーザIDまたはパスワードが正しくありません。'
             );
             echo json_encode($resultMsg, JSON_UNESCAPED_UNICODE);
-            //echo "エラー";
             return;
         }
     }else{  //入力されていない場合
@@ -51,8 +50,6 @@
             'resultMsg'=>'入力されていません。'
         );
         echo json_encode($resultMsg, JSON_UNESCAPED_UNICODE);
-        //echo "入力されていない";
         return;
     }
-    //require_once './tpl/login.php';
 ?>
