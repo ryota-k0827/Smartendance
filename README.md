@@ -1,4 +1,4 @@
-# 出席管理システム『Smartendance』(API)
+# 出席管理システム『Smartendance』
 
 ![ロゴ](logo.png)
 
@@ -13,3 +13,6 @@
 ## 動作環境
 - XFREE（レンタルサーバー）上で動作しています。
 - ローカル環境では動作しません。
+
+## デモ動画
+- [YouTube](https://youtu.be/AsPM6V7sQ3o)
