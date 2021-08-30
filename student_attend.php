@@ -4,10 +4,9 @@
     $classes_id = $_GET['class_id'];
 
     $day_of_the_week = date('w');  //本日の曜日の番号（0〜6）のいずれかを格納
-    //$day_of_the_week = 1; //テスト用
     $date = date('Y/m/d');
     $time = date('H:i:s');  //現在の時間を取得
-    //$time = '11:15:00';  //テスト用
+    //$time = '11:15:00';  //現在の時間を取得
 
     //sql
     $link = mysqli_connect('mysql1.php.xdomain.ne.jp','ryotakaneko_1','ohs80538','ryotakaneko_smartendance');
@@ -46,7 +45,7 @@
             if($time <= $record['start_time']){  //時間内に出席できた場合
                 //現在の日時を取得
                 $nowDate = date("Y/m/d H:i:s");
-                $data = mysqli_query($link,"INSERT INTO attend (no,student_number,attend_day,attend_time) VALUES (".$no.", ".$userId.",'".$date."','".$time."',1);");
+                $data = mysqli_query($link,"INSERT INTO attend (no,student_number,attend_day,attend_time,status) VALUES (".$no.", ".$userId.",'".$date."','".$time."',1);");
                 $ary_data = array(
                     'classRoomNuber'=>$class_room_number,
                     'classSymbol'=>$record['class_symbol'],
@@ -61,7 +60,7 @@
                 if($time <= date('H:i:s',strtotime($record['start_time'].'+15 minute'))){    //15分以内の遅刻で出席した場合
                     //現在の日時を取得
                     $nowDate = date("Y/m/d H:i:s");
-                    $data = mysqli_query($link,"INSERT INTO attend (no,student_number,attend_day,attend_time) VALUES (".$no.", ".$userId.",'".$date."','".$time."',2);");
+                    $data = mysqli_query($link,"INSERT INTO attend (no,student_number,attend_day,attend_time,status) VALUES (".$no.", ".$userId.",'".$date."','".$time."',2);");
                     $attend_data = array(
                         'classRoomNuber'=>$class_room_number,
                         'classSymbol'=>$record['class_symbol'],
