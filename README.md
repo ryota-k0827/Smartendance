@@ -27,4 +27,4 @@
 8. 教官アカウントでログインした端末で欠席者一覧を確認できます。
 
 ## デモ動画
-- [YouTube](https://youtu.be/AsPM6V7sQ3o)
+- [YouTube](https://youtu.be/yMKV9JE0Vlg)
